@@ -1,15 +1,21 @@
-# Silvia Busquets Xapellí
+# silviabusquetsxapelli.github.io
 
-Personal website and public portfolio for economics, European affairs, explainers and independent publications.
+Personal website of Silvia Busquets Xapellí.
 
-**Website:** https://silviabusquetsxapelli.github.io
+The site brings together work across economics, European affairs, explainers, educational resources and independent publications.
 
-## Sections
+## Main sections
 
 - Projects
 - Europe & Economy
 - Explainers
-- Books & Publications
+- Books
 - About
 
-Built as a lightweight static website with HTML, CSS and JavaScript and published with GitHub Pages.
+## Europe & Economy
+
+This section includes short, sourced guides designed for general readers. The first published briefing is:
+
+**EU Institutions at a Glance** — a plain-English overview of the seven EU institutions and the ordinary legislative procedure.
+
+Website: https://silviabusquetsxapelli.github.io
