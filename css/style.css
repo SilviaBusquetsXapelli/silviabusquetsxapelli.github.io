@@ -205,3 +205,14 @@ footer{
   .book-mockup{max-width:260px;width:100%;margin:auto}
   .highlight-panel{align-items:flex-start;flex-direction:column}
 }
+
+/* v5.2 refinements */
+.info-card{display:block}
+.static-tile{cursor:default}
+.footerlinks{display:flex;gap:16px;flex-wrap:wrap}
+.footerlinks a{text-decoration:none;color:var(--muted);font-weight:700}
+.footerlinks a:hover{color:var(--accent-dark)}
+.status-pill{margin-top:10px}
+@media(max-width:700px){
+  .footerline{flex-direction:column}
+}
