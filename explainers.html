@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Short, visual explainers on economics, finance and European institutions by Silvia Busquets Xapellí.">
+  <meta name="description" content="Short visual explainers on economics, finance and Europe by Silvia Busquets Xapellí.">
   <title>Explainers | Silvia Busquets Xapellí</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -23,36 +23,116 @@
 
 <main>
   <section class="container page-hero">
-    <p class="eyebrow">VISUAL EXPLAINERS</p>
-    <h1>Explainers</h1>
-    <p class="lead">Short, accessible explanations designed to make economic, financial and European topics easier to understand.</p>
+    <p class="eyebrow">EXPLAINERS</p>
+    <h1>Short ideas made clear</h1>
+    <p class="lead display-copy">Visual explainers on economics, finance and how Europe works</p>
   </section>
 
-  <section class="container section compact-section">
-    <div class="section-head">
-      <p class="eyebrow">IN DEVELOPMENT</p>
-      <h2>Three strands of visual explanation.</h2>
-      <p>Selected explainers will be added as they are completed and reviewed.</p>
+  <section class="container explainer-browser">
+    <div class="explainer-toolbar">
+      <label class="search-box">
+        <span class="sr-only">Search explainers</span>
+        <input id="explainer-search" type="search" placeholder="Search explainers" autocomplete="off">
+      </label>
+      <div class="filter-row" aria-label="Filter explainers">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="economics" aria-pressed="false">Economics</button>
+        <button class="filter-btn" data-filter="finance" aria-pressed="false">Finance</button>
+        <button class="filter-btn" data-filter="europe" aria-pressed="false">Europe</button>
+      </div>
     </div>
-    <div class="grid3">
-      <article class="tile static-tile">
-        <div class="tile-icon">01</div>
-        <h3>Economics</h3>
-        <p>Macroeconomic concepts, data and economic mechanisms explained without unnecessary jargon.</p>
-        <span class="status-pill">Coming soon</span>
+
+    <div class="series-jump">
+      <span class="small-label">BROWSE BY SERIES</span>
+      <a href="#series-01">Series 01&nbsp; Economics in Practice</a>
+      <a href="#series-02">Series 02&nbsp; How Europe Works</a>
+    </div>
+  </section>
+
+  <section class="container section explainer-series" id="series-01" data-series>
+    <div class="section-head series-head">
+      <p class="eyebrow">SERIES 01</p>
+      <h2>Economics in Practice</h2>
+      <p class="display-copy">Everyday economic ideas explained without unnecessary jargon</p>
+    </div>
+    <div class="video-grid explainer-grid">
+      <article class="video-card explainer-item" data-category="economics" data-search="inflation prices cost of living economics">
+        <div class="video-thumb"><span class="topic-chip">Economics</span><h3>What inflation actually measures</h3></div>
+        <div class="video-body"><span class="status-line">Planned explainer</span></div>
       </article>
-      <article class="tile static-tile">
-        <div class="tile-icon">02</div>
-        <h3>Finance</h3>
-        <p>Financial markets, banking and the links between economic policy and financial conditions.</p>
-        <span class="status-pill">Coming soon</span>
+      <article class="video-card explainer-item" data-category="finance economics" data-search="interest rates borrowing loans finance economics">
+        <div class="video-thumb thumb-lav"><span class="topic-chip">Finance</span><h3>Why interest rates change borrowing costs</h3></div>
+        <div class="video-body"><span class="status-line">Planned explainer</span></div>
       </article>
-      <article class="tile static-tile">
-        <div class="tile-icon">03</div>
-        <h3>European Institutions</h3>
-        <p>Who does what in the EU, how decisions are made and why the institutional structure matters.</p>
-        <span class="status-pill">Coming soon</span>
+      <article class="video-card explainer-item" data-category="economics" data-search="gdp growth living standards economics">
+        <div class="video-thumb thumb-sage"><span class="topic-chip">Economics</span><h3>GDP growth and living standards are not the same thing</h3></div>
+        <div class="video-body"><span class="status-line">Planned explainer</span></div>
       </article>
+      <article class="video-card explainer-item" data-category="economics finance" data-search="nominal real values inflation wages finance economics">
+        <div class="video-thumb thumb-peach"><span class="topic-chip">Economics</span><h3>Nominal and real values in two minutes</h3></div>
+        <div class="video-body"><span class="status-line">Planned explainer</span></div>
+      </article>
+      <article class="video-card explainer-item" data-category="finance economics" data-search="exchange rates currency euro dollar finance economics">
+        <div class="video-thumb thumb-blue"><span class="topic-chip">Finance</span><h3>Why exchange rates move</h3></div>
+        <div class="video-body"><span class="status-line">Planned explainer</span></div>
+      </article>
+      <article class="video-card explainer-item" data-category="economics" data-search="correlation causation data statistics economics">
+        <div class="video-thumb thumb-blush"><span class="topic-chip">Economics</span><h3>Correlation is not causation</h3></div>
+        <div class="video-body"><span class="status-line">Planned explainer</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="container section explainer-series" id="series-02" data-series>
+    <div class="section-head series-head">
+      <p class="eyebrow">SERIES 02</p>
+      <h2>How Europe Works</h2>
+      <p class="display-copy">A practical guide to institutions, decisions and the structures people often confuse</p>
+    </div>
+    <div class="video-grid explainer-grid">
+      <article class="video-card explainer-item" data-category="europe" data-search="european council council of the eu institutions europe">
+        <div class="video-thumb thumb-blush"><span class="topic-chip">Europe</span><h3>European Council vs Council of the EU</h3></div>
+        <div class="video-body"><span class="status-line">Planned explainer</span></div>
+      </article>
+      <article class="video-card explainer-item" data-category="europe" data-search="commission parliament law proposals institutions europe">
+        <div class="video-thumb thumb-lav"><span class="topic-chip">Europe</span><h3>Commission vs Parliament</h3></div>
+        <div class="video-body"><span class="status-line">Planned explainer</span></div>
+      </article>
+      <article class="video-card explainer-item" data-category="europe" data-search="eu law legislation ordinary legislative procedure europe">
+        <div class="video-thumb thumb-sage"><span class="topic-chip">Europe</span><h3>How an EU law is made</h3></div>
+        <div class="video-body"><span class="status-line">Planned explainer</span></div>
+      </article>
+      <article class="video-card explainer-item" data-category="europe" data-search="qualified majority voting qmv council europe">
+        <div class="video-thumb thumb-blue"><span class="topic-chip">Europe</span><h3>What qualified majority voting means</h3></div>
+        <div class="video-body"><span class="status-line">Planned explainer</span></div>
+      </article>
+      <article class="video-card explainer-item" data-category="europe finance" data-search="ecb eib central bank investment bank finance europe">
+        <div class="video-thumb thumb-peach"><span class="topic-chip">Europe</span><h3>ECB vs EIB</h3></div>
+        <div class="video-body"><span class="status-line">Planned explainer</span></div>
+      </article>
+      <article class="video-card explainer-item" data-category="europe economics" data-search="eurogroup euro finance ministers economics europe">
+        <div class="video-thumb"><span class="topic-chip">Europe</span><h3>What the Eurogroup actually is</h3></div>
+        <div class="video-body"><span class="status-line">Planned explainer</span></div>
+      </article>
+      <article class="video-card explainer-item" data-category="europe" data-search="eu euro area schengen difference europe">
+        <div class="video-thumb thumb-lav"><span class="topic-chip">Europe</span><h3>EU euro area and Schengen are not the same thing</h3></div>
+        <div class="video-body"><span class="status-line">Planned explainer</span></div>
+      </article>
+      <article class="video-card explainer-item" data-category="europe economics" data-search="eu budget money spending revenue economics europe">
+        <div class="video-thumb thumb-sage"><span class="topic-chip">Europe</span><h3>Where the EU budget comes from and where it goes</h3></div>
+        <div class="video-body"><span class="status-line">Planned explainer</span></div>
+      </article>
+      <article class="video-card explainer-item" data-category="europe economics" data-search="single market goods services capital people economics europe">
+        <div class="video-thumb thumb-blue"><span class="topic-chip">Europe</span><h3>What the Single Market changes in practice</h3></div>
+        <div class="video-body"><span class="status-line">Planned explainer</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="container compact-section" id="no-results" hidden>
+    <div class="notice-card">
+      <h2>No matching explainers</h2>
+      <p>Try another word or choose a different topic</p>
     </div>
   </section>
 </main>
