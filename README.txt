@@ -1,22 +1,13 @@
-SILVIA BUSQUETS XAPELLÍ — WEBSITE v5
+Silvia Busquets Xapellí — personal website
 
-GitHub Pages address:
-https://silviabusquetsxapelli.github.io/
+GitHub Pages package.
 
-UPLOAD TO GITHUB
-1. Open repository: silviabusquetsxapelli.github.io
-2. Choose Add file > Upload files.
-3. Upload the CONTENTS of this folder, not the ZIP itself.
-4. Keep the same folder structure: css/, js/, assets/, projects/.
-5. Commit changes to main.
-6. GitHub Pages will publish from main /(root).
+Main sections:
+- Home
+- Projects (coming soon)
+- Europe & Economy
+- Explainers
+- Books & Publications
+- About
 
-Main pages:
-- index.html
-- projects.html
-- eu-knowledge.html
-- explainers.html
-- books.html
-- about.html
-
-The Books page is ready to grow. Amazon links and real book covers can be added as titles go live.
+Publish the contents of this folder at the root of the silviabusquetsxapelli.github.io repository.
