@@ -87,3 +87,8 @@ document.querySelectorAll('.preview-close').forEach(button => {
     if(toggle){ toggle.setAttribute('aria-expanded','false'); toggle.focus(); }
   });
 });
+
+// v7 header refinement
+const siteHeader = document.querySelector('.site-header');
+const syncHeader = () => siteHeader?.classList.toggle('scrolled', window.scrollY > 12);
+syncHeader(); window.addEventListener('scroll', syncHeader, {passive:true});
