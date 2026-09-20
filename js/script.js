@@ -1,9 +1,22 @@
 const menu = document.querySelector('.menu');
 const links = document.querySelector('.navlinks');
 if(menu && links){
-  menu.addEventListener('click', ()=>links.classList.toggle('open'));
-  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+  menu.addEventListener('click', ()=>{
+    const open = links.classList.toggle('open');
+    menu.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
 }
+
+document.querySelectorAll('.dropdown-trigger').forEach(trigger=>{
+  trigger.addEventListener('click', e=>{
+    e.stopPropagation();
+    const item=trigger.closest('.has-dropdown');
+    const open=item.classList.toggle('open');
+    trigger.setAttribute('aria-expanded',open?'true':'false');
+  });
+});
+document.addEventListener('click',()=>document.querySelectorAll('.has-dropdown.open').forEach(item=>{item.classList.remove('open');item.querySelector('.dropdown-trigger')?.setAttribute('aria-expanded','false')}));
 
 const searchInput = document.querySelector('#explainer-search');
 const filterButtons = [...document.querySelectorAll('.filter-btn')];

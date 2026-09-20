@@ -5,22 +5,33 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="About Silvia Busquets Xapellí — economics, finance, research and European affairs.">
   <title>About | Silvia Busquets Xapellí</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="canonical" href="https://silviabusquetsxapelli.github.io/about.html">
   <meta name="author" content="Silvia Busquets Xapellí">
   <meta name="robots" content="index, follow">
 </head>
 <body>
-<header><div class="container nav">
-  <a class="brand" href="index.html">Silvia Busquets Xapellí</a>
-  <button class="menu" aria-label="Open menu">☰</button>
-  <nav class="navlinks">
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="eu-knowledge.html">Europe & Economy</a>
-    <a href="explainers.html">Explainers</a>
-    <a href="books.html">Books</a>
-    <a class="active" aria-current="page" href="about.html">About</a>
+<header class="site-header"><div class="container nav">
+  <a class="brand" href="index.html"><span class="brand-mark">SB</span><span>Silvia Busquets Xapellí</span></a>
+  <button class="menu" aria-label="Open menu" aria-expanded="false">☰</button>
+  <nav class="navlinks" aria-label="Main navigation">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link" href="projects.html">Projects</a>
+    <div class="nav-item has-dropdown">
+      <button class="nav-link dropdown-trigger" aria-expanded="false">Europe &amp; Economy <span class="chev">⌄</span></button>
+      <div class="dropdown">
+        <a href="eu-knowledge.html"><strong>Overview</strong><span>Browse the full knowledge library</span></a>
+        <a href="europe/eu-institutions.html"><strong>EU Institutions</strong><span>Roles, powers and institutional architecture</span></a>
+        <a href="europe/decision-making.html"><strong>Decision Making</strong><span>Legislation, voting and EU processes</span></a>
+        <a href="europe/budget-economy.html"><strong>Budget &amp; Economy</strong><span>Budget, governance and economic policy</span></a>
+      </div>
+    </div>
+    <a class="nav-link" href="explainers.html">Explainers</a>
+    <a class="nav-link" href="books.html">Publications</a>
+    <a class="nav-link active" aria-current="page" href="about.html">About</a>
   </nav>
 </div></header>
 
