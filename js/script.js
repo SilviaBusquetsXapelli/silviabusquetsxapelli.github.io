@@ -102,3 +102,14 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
   }),{threshold:.12,rootMargin:'0px 0px -30px 0px'});
   revealTargets.forEach(el=>observer.observe(el));
 }
+
+
+// v9 Insights filters
+const insightFilters=[...document.querySelectorAll('.insight-filter')];
+const insightRows=[...document.querySelectorAll('.insight-row')];
+insightFilters.forEach(button=>button.addEventListener('click',()=>{
+  const filter=button.dataset.insightFilter||'all';
+  insightFilters.forEach(b=>{const on=b===button;b.classList.toggle('active',on);b.setAttribute('aria-pressed',on?'true':'false')});
+  insightRows.forEach(row=>{const cats=(row.dataset.insightCategory||'').split(/\s+/);row.hidden=filter!=='all'&&!cats.includes(filter)});
+}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&links?.classList.contains('open')){links.classList.remove('open');menu?.setAttribute('aria-expanded','false');menu?.focus()}});
