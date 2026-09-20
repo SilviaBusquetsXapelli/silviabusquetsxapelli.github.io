@@ -92,3 +92,13 @@ document.querySelectorAll('.preview-close').forEach(button => {
 const siteHeader = document.querySelector('.site-header');
 const syncHeader = () => siteHeader?.classList.toggle('scrolled', window.scrollY > 12);
 syncHeader(); window.addEventListener('scroll', syncHeader, {passive:true});
+
+// v8 restrained reveal motion
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const revealTargets = document.querySelectorAll('.work-card,.topic,.resource-card,.series-v8 article,.book-index>div,.about-copy,.profile-photo,.catalogue-empty');
+  revealTargets.forEach(el=>el.classList.add('reveal'));
+  const observer = new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}
+  }),{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+  revealTargets.forEach(el=>observer.observe(el));
+}

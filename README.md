@@ -2,7 +2,7 @@
 
 Personal website of Silvia Busquets Xapellí.
 
-The site brings together work across economics, European affairs, explainers, educational resources and independent publications.
+The site brings together work across economics, European affairs, explainers, educational resources and independent books.
 
 ## Main sections
 
