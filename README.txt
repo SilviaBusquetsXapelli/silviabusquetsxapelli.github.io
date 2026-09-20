@@ -12,16 +12,20 @@ The site brings together work across economics, European affairs, explainers, ed
 - Books
 - About
 
-#Europe & Economy structure
+#Europe & Economy
 
-The Europe & Economy area is organised by topic rather than as one long list of resources:
+The Europe & Economy area is organised by topic:
 
 - EU Institutions
 - Decision Making
 - Budget & Economy
 
-Each topic has its own page. Individual guides then have their own detail page and downloadable PDF.
+Each topic has its own page, and each guide has its own detail page and downloadable PDF.
 
-The first published briefing is EU Institutions at a Glance, available under EU Institutions.
+Published briefings:
+
+1. EU Institutions at a Glance
+2. How an EU Law Is Made
+3. EU Budget at a Glance
 
 Website: https://silviabusquetsxapelli.github.io
