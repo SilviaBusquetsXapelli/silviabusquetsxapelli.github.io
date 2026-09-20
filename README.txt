@@ -29,3 +29,6 @@ Published briefings:
 3. EU Budget at a Glance
 
 Website: https://silviabusquetsxapelli.github.io
+
+
+v8.1 polish: restored Europe & Economy overview content; refined Home copy; Research page now accurately presents research interests until projects are published. Bloomberg is not listed.
