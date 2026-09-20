@@ -29,7 +29,3 @@ Published briefings:
 3. **EU Budget at a Glance**
 
 Website: https://silviabusquetsxapelli.github.io
-
-
-## v5.9
-Added inline PDF preview controls to the three published Europe & Economy briefing cards.
