@@ -52,11 +52,16 @@
           <p>From Commission proposal to final adoption</p>
           <div class="tagrow"><span class="tag">Decision making</span><span class="tag">Ordinary legislative procedure</span><span class="tag">Official sources</span></div>
           <div class="actions resource-actions">
-            <a class="btn dark" href="../resources/how-an-eu-law-is-made.html">View guide</a>
-            <a class="btn soft" href="../resources/Briefing_02_How_an_EU_Law_Is_Made.pdf" target="_blank" rel="noopener">Download PDF</a>
+            <button class="btn dark preview-toggle" type="button" data-pdf="../resources/Briefing_02_How_an_EU_Law_Is_Made.pdf" aria-expanded="false">Preview</button>
+            <a class="btn soft" href="../resources/how-an-eu-law-is-made.html">View guide</a>
+            <a class="btn soft" href="../resources/Briefing_02_How_an_EU_Law_Is_Made.pdf" download>Download PDF</a>
           </div>
         </div>
       </article>
+      <div class="pdf-preview" hidden>
+        <div class="pdf-preview-head"><strong>PDF preview</strong><button class="preview-close" type="button" aria-label="Close preview">Close</button></div>
+        <iframe title="PDF preview" loading="lazy"></iframe>
+      </div>
     </div>
   </section>
 </main>

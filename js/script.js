@@ -50,3 +50,27 @@ filterButtons.forEach(button => {
     updateExplainers();
   });
 });
+
+
+// v5.9 inline PDF preview
+document.querySelectorAll('.preview-toggle').forEach(button => {
+  button.addEventListener('click', () => {
+    const card = button.closest('.resource-card');
+    const preview = card?.nextElementSibling;
+    if(!preview || !preview.classList.contains('pdf-preview')) return;
+    const frame = preview.querySelector('iframe');
+    if(frame && !frame.src) frame.src = button.dataset.pdf;
+    preview.hidden = false;
+    button.setAttribute('aria-expanded','true');
+    preview.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+document.querySelectorAll('.preview-close').forEach(button => {
+  button.addEventListener('click', () => {
+    const preview = button.closest('.pdf-preview');
+    if(!preview) return;
+    preview.hidden = true;
+    const toggle = preview.previousElementSibling?.querySelector('.preview-toggle');
+    if(toggle){ toggle.setAttribute('aria-expanded','false'); toggle.focus(); }
+  });
+});

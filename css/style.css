@@ -464,3 +464,12 @@ footer{
 }
 .empty-library h3{font-size:1.8rem;margin:.5rem 0 .55rem}
 .empty-library p{color:var(--muted);max-width:650px}
+
+
+/* v5.9 inline PDF previews */
+.pdf-preview{margin-top:18px;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--paper);box-shadow:var(--shadow)}
+.pdf-preview-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.preview-close{border:0;background:transparent;color:var(--muted);font:inherit;font-weight:700;cursor:pointer}
+.preview-close:hover{color:var(--accent-dark)}
+.pdf-preview iframe{display:block;width:100%;height:min(78vh,900px);border:0;background:#fff}
+@media(max-width:700px){.pdf-preview iframe{height:70vh}.resource-actions{gap:10px}.resource-actions .btn,.resource-actions button.btn{width:100%;text-align:center}}
