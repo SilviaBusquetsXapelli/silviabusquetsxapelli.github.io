@@ -445,3 +445,22 @@ footer{
   .resource-cover{max-width:260px;width:100%}
   .related-panel{align-items:flex-start;flex-direction:column}
 }
+
+
+/* v5.6 topic-page architecture */
+.quiet-panel{
+  border-top:1px solid var(--line);
+  padding-top:34px;
+  max-width:760px
+}
+.quiet-panel h2{font-size:2rem;margin:.2rem 0 .45rem}
+.resource-list{display:grid;gap:24px}
+.empty-library{
+  border:1px solid var(--line);
+  background:var(--paper);
+  border-radius:var(--r-lg);
+  padding:36px;
+  max-width:780px
+}
+.empty-library h3{font-size:1.8rem;margin:.5rem 0 .55rem}
+.empty-library p{color:var(--muted);max-width:650px}

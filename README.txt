@@ -12,10 +12,16 @@ The site brings together work across economics, European affairs, explainers, ed
 - Books
 - About
 
-#Europe & Economy
+#Europe & Economy structure
 
-This section includes short, sourced guides designed for general readers. The first published briefing is:
+The Europe & Economy area is organised by topic rather than as one long list of resources:
 
-EU Institutions at a Glance — a plain-English overview of the seven EU institutions and the ordinary legislative procedure.
+- EU Institutions
+- Decision Making
+- Budget & Economy
+
+Each topic has its own page. Individual guides then have their own detail page and downloadable PDF.
+
+The first published briefing is EU Institutions at a Glance, available under EU Institutions.
 
 Website: https://silviabusquetsxapelli.github.io
