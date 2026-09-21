@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://silviabusquetsxapelli.github.io/</loc></url>
-  <url><loc>https://silviabusquetsxapelli.github.io/projects.html</loc></url>
-  <url><loc>https://silviabusquetsxapelli.github.io/insights.html</loc></url>
+  <url><loc>https://silviabusquetsxapelli.github.io/learn.html</loc></url>
   <url><loc>https://silviabusquetsxapelli.github.io/books.html</loc></url>
   <url><loc>https://silviabusquetsxapelli.github.io/about.html</loc></url>
-  <url><loc>https://silviabusquetsxapelli.github.io/resources/eu-institutions-at-a-glance.html</loc></url>
-  <url><loc>https://silviabusquetsxapelli.github.io/resources/how-an-eu-law-is-made.html</loc></url>
-  <url><loc>https://silviabusquetsxapelli.github.io/resources/eu-budget-at-a-glance.html</loc></url>
+  <url><loc>https://silviabusquetsxapelli.github.io/learn/eu-institutions.html</loc></url>
+  <url><loc>https://silviabusquetsxapelli.github.io/learn/eu-law.html</loc></url>
+  <url><loc>https://silviabusquetsxapelli.github.io/learn/eu-budget.html</loc></url>
+  <url><loc>https://silviabusquetsxapelli.github.io/learn/inflation.html</loc></url>
+  <url><loc>https://silviabusquetsxapelli.github.io/learn/ecb-monetary-policy.html</loc></url>
+  <url><loc>https://silviabusquetsxapelli.github.io/learn/bonds.html</loc></url>
 </urlset>

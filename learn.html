@@ -1,0 +1,95 @@
+<!doctype html><html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Interactive lessons in economics, finance, banking and European institutions."/>
+<title>Learn | Silvia Busquets Xapellí</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link rel="canonical" href="https://silviabusquetsxapelli.github.io/learn.html"/>
+<meta name="author" content="Silvia Busquets Xapellí"/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#102a43"/>
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+</head>
+<body>
+<header class="site-header"><div class="container nav">
+<a class="brand" href="index.html"><span class="brand-mark">SB</span><span>Silvia Busquets Xapellí</span></a>
+<button aria-expanded="false" aria-label="Open menu" class="menu">☰</button>
+<nav aria-label="Main navigation" class="navlinks"><a class="nav-link" href="index.html">Home</a><a class="nav-link active" aria-current="page" href="learn.html">Learn</a><a class="nav-link" href="books.html">Books</a><a class="nav-link" href="about.html">About</a></nav>
+</div></header>
+<main>
+<section class="container page-hero learn-hero">
+<p class="eyebrow">LEARN</p>
+<h1>Build understanding, one topic at a time</h1>
+<p class="lead display-copy">Short explanations when the idea is simple. Deeper sections when it is not. Then interact, practise, explain it yourself and come back later.</p>
+<div class="learn-progress-card" aria-live="polite">
+<div><span class="eyebrow">YOUR PROGRESS</span><strong><span id="progress-count">0</span> of <span id="progress-total">6</span> core lessons completed</strong></div>
+<div class="progress-track"><span id="progress-bar"></span></div>
+<small>Progress is stored only in this browser. No account required.</small>
+</div>
+</section>
+
+<section class="container section compact-section">
+<div class="learn-toolbar">
+<label class="learn-search"><span class="sr-only">Search lessons</span><input id="learn-search" type="search" placeholder="Search inflation, Parliament, bonds…"/></label>
+<div class="filter-row" aria-label="Filter lessons">
+<button class="learn-filter active" data-learn-filter="all" aria-pressed="true">All</button>
+<button class="learn-filter" data-learn-filter="eu" aria-pressed="false">European Union</button>
+<button class="learn-filter" data-learn-filter="economics" aria-pressed="false">Economics</button>
+<button class="learn-filter" data-learn-filter="banking" aria-pressed="false">Money & Banking</button>
+<button class="learn-filter" data-learn-filter="finance" aria-pressed="false">Finance</button>
+</div>
+</div>
+<div class="lesson-library">
+<a class="lesson-card" data-learn-card data-category="eu" data-lesson-id="eu-institutions" data-search="EU institutions parliament commission council european council ECB court auditors" href="learn/eu-institutions.html"><span class="lesson-code">EU01</span><div><span class="lesson-topic">European Union · Beginner</span><h2>Who does what in the EU?</h2><p>Separate the institutions, understand their roles and stop confusing the two Councils.</p></div><span class="lesson-status">Start →</span></a>
+<a class="lesson-card" data-learn-card data-category="eu" data-lesson-id="eu-law" data-search="EU law ordinary legislative procedure commission parliament council legislation" href="learn/eu-law.html"><span class="lesson-code">EU02</span><div><span class="lesson-topic">European Union · Beginner</span><h2>How an EU law is made</h2><p>Follow a proposal through the ordinary legislative procedure.</p></div><span class="lesson-status">Start →</span></a>
+<a class="lesson-card" data-learn-card data-category="eu economics" data-lesson-id="eu-budget" data-search="EU budget MFF annual budget parliament council commission public finance" href="learn/eu-budget.html"><span class="lesson-code">EU03</span><div><span class="lesson-topic">European Union · Public finance</span><h2>How the EU budget works</h2><p>Distinguish the long-term framework from the annual budget and identify who does what.</p></div><span class="lesson-status">Start →</span></a>
+<a class="lesson-card" data-learn-card data-category="economics banking" data-lesson-id="inflation" data-search="inflation HICP prices purchasing power ECB economics" href="learn/inflation.html"><span class="lesson-code">EC01</span><div><span class="lesson-topic">Economics · Beginner</span><h2>Inflation, without the fog</h2><p>See what a percentage rate means for prices and why the source of inflation matters.</p></div><span class="lesson-status">Start →</span></a>
+<a class="lesson-card" data-learn-card data-category="economics banking" data-lesson-id="ecb-policy" data-search="ECB monetary policy interest rates transmission inflation central bank" href="learn/ecb-monetary-policy.html"><span class="lesson-code">MB01</span><div><span class="lesson-topic">Money & Banking · Intermediate</span><h2>How ECB interest rates reach the economy</h2><p>Trace monetary policy from policy rates to financing conditions, demand and inflation.</p></div><span class="lesson-status">Start →</span></a>
+<a class="lesson-card" data-learn-card data-category="finance" data-lesson-id="bonds" data-search="bonds yield price coupon finance fixed income interest rates" href="learn/bonds.html"><span class="lesson-code">FI01</span><div><span class="lesson-topic">Finance · Beginner</span><h2>Why bond prices move opposite to yields</h2><p>Use a small bond calculator to see the relationship instead of memorising it.</p></div><span class="lesson-status">Start →</span></a>
+</div>
+<p id="learn-no-results" class="empty-search" hidden>No lesson matches that search yet.</p>
+</section>
+
+<section class="container section learning-paths">
+<div class="section-label"><div><p class="eyebrow">LEARNING PATHS</p><h2>Study with a purpose</h2></div></div>
+
+<article class="path-section" id="eu-path">
+<div class="path-head"><div><span class="path-number">01</span><div><h3>Understand the EU</h3><p>Start with the architecture, then follow decisions and money.</p></div></div><span>3 core lessons</span></div>
+<div class="path-sequence"><a href="learn/eu-institutions.html">EU Institutions</a><span>→</span><a href="learn/eu-law.html">EU law-making</a><span>→</span><a href="learn/eu-budget.html">EU budget</a></div>
+</article>
+
+<article class="path-section" id="ecb-path">
+<div class="path-head"><div><span class="path-number">02</span><div><h3>ECB & Monetary Policy</h3><p>Build the intuition before trying to sound technical.</p></div></div><span>2 core lessons</span></div>
+<div class="path-sequence"><a href="learn/inflation.html">Inflation</a><span>→</span><a href="learn/ecb-monetary-policy.html">Monetary-policy transmission</a></div>
+</article>
+
+<article class="path-section" id="finance-path">
+<div class="path-head"><div><span class="path-number">03</span><div><h3>Finance Foundations</h3><p>A growing route through the mechanisms behind financial markets.</p></div></div><span>Growing path</span></div>
+<div class="path-sequence"><a href="learn/bonds.html">Bonds & yields</a><span class="coming-step">More topics will be added deliberately, not for volume.</span></div>
+</article>
+
+<article class="path-section path-emphasis" id="ad5-path">
+<div class="path-head"><div><span class="path-number">04</span><div><h3>EU Careers / AD5 preparation</h3><p>Use the EU knowledge pages for understanding and recall, while keeping official EPSO material as the source of truth.</p></div></div><span>Study layer</span></div>
+<div class="ad5-grid">
+<div><strong>Part 1 — November 2026</strong><p>Reasoning tests: verbal, numerical and abstract reasoning. These require dedicated timed practice beyond this knowledge library.</p></div>
+<div><strong>Part 2 — 2027</strong><p>EU knowledge, digital skills and the Free-Text Essay on EU Matters. This learning library is designed to become increasingly useful here.</p></div>
+</div>
+<p class="source-small">EPSO says the official source references for the EU knowledge test will be published approximately two months before that test. When published, this path can be mapped directly to those sources.</p>
+<a class="text-link" href="https://eu-careers.europa.eu/en/graduates-administrators-ad5" target="_blank" rel="noopener noreferrer">Check the official EPSO AD5 page ↗</a>
+</article>
+</section>
+</main>
+<footer class="footer-premium"><div class="container">
+<div class="footer-grid">
+<div class="footer-brand"><h3>Silvia Busquets Xapellí</h3><p>Economics, finance and European affairs — learned by explaining.</p></div>
+<div class="footer-col"><strong>Explore</strong><a href="learn.html">Learn</a><a href="books.html">Books</a><a href="about.html">About</a></div>
+<div class="footer-col"><strong>Connect</strong><a href="https://www.linkedin.com/in/silvia-busquets-xapell%C3%AD" rel="noopener noreferrer" target="_blank">LinkedIn ↗</a><a href="https://github.com/SilviaBusquetsXapelli" rel="noopener noreferrer" target="_blank">GitHub ↗</a></div>
+</div>
+<div class="footer-bottom"><span>© 2026 Silvia Busquets Xapellí</span><span>Economics · Finance · European Affairs</span></div>
+</div></footer>
+<script src="js/script.js"></script>
+</body></html>

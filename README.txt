@@ -1,34 +1,22 @@
-silviabusquetsxapelli.github.io
+SILVIA BUSQUETS XAPELLÍ — WEBSITE V10 LEARN
 
-Personal website of Silvia Busquets Xapellí.
-
-The site brings together work across economics, European affairs, explainers, educational resources and independent books.
-
-#Main sections
-
-- Projects
-- Europe & Economy
-- Explainers
+Main navigation:
+- Home
+- Learn
 - Books
 - About
 
-#Europe & Economy
+What changed from v9:
+- Insights/Projects are no longer primary navigation. Legacy URLs redirect to Learn.
+- Learn is the central product: searchable topic library + learning paths.
+- 6 initial interactive lessons: EU institutions, EU law-making, EU budget, inflation, ECB monetary-policy transmission, bonds & yields.
+- Reusable interactions: quizzes, matching, ordering, scenarios, sliders/calculators, answer-framework reveals.
+- Browser-only completion tracking via localStorage (no accounts/server).
+- Print / Save as PDF uses print CSS; no separate PDF needs to be maintained for each lesson.
+- Books remain paid products. Only books connected to economics/Europe/learning belong on this professional site, and lesson references are deliberately subtle.
+- AD5 section is a study layer, not a substitute for official EPSO material.
 
-The Europe & Economy area is organised by topic:
-
-- EU Institutions
-- Decision Making
-- Budget & Economy
-
-Each topic has its own page, and each guide has its own detail page and downloadable PDF.
-
-Published briefings:
-
-1. EU Institutions at a Glance
-2. How an EU Law Is Made
-3. EU Budget at a Glance
-
-Website: https://silviabusquetsxapelli.github.io
-
-
-v8.1 polish: restored Europe & Economy overview content; refined Home copy; Research page now accurately presents research interests until projects are published. Bloomberg is not listed.
+Before publishing a paid book:
+1. Add its Amazon URL on books.html.
+2. Replace the relevant lesson's future-book note with a small contextual Amazon link.
+3. Do not copy paid book chapters into Learn.
