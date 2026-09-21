@@ -139,6 +139,54 @@ document.querySelector('.mark-complete')?.addEventListener('click', () => {
   syncLearnProgress();
 });
 
+// Share the current lesson using the device share sheet when available.
+// On browsers without Web Share, copy the canonical lesson URL instead.
+document.querySelector('.share-lesson')?.addEventListener('click', async (event) => {
+  const button = event.currentTarget;
+  const canonical = document.querySelector('link[rel="canonical"]')?.href || window.location.href;
+  const title = document.querySelector('h1')?.textContent?.trim() || document.title;
+  const shareData = {
+    title,
+    text: `Explore ${title} on Silvia Busquets Xapellí Learn`,
+    url: canonical
+  };
+
+  if(navigator.share){
+    try {
+      await navigator.share(shareData);
+      return;
+    } catch(error){
+      if(error?.name === 'AbortError') return;
+    }
+  }
+
+  let copied = false;
+  try {
+    await navigator.clipboard.writeText(canonical);
+    copied = true;
+  } catch(error){
+    const input = document.createElement('textarea');
+    input.value = canonical;
+    input.setAttribute('readonly','');
+    input.style.position = 'fixed';
+    input.style.opacity = '0';
+    document.body.appendChild(input);
+    input.select();
+    copied = document.execCommand('copy');
+    input.remove();
+  }
+
+  if(copied){
+    const original = button.textContent;
+    button.textContent = 'Link copied ✓';
+    button.classList.add('share-confirmed');
+    window.setTimeout(() => {
+      button.textContent = original;
+      button.classList.remove('share-confirmed');
+    }, 1800);
+  }
+});
+
 document.querySelector('.print-lesson')?.addEventListener('click', () => window.print());
 
 // Learn search + category filters
