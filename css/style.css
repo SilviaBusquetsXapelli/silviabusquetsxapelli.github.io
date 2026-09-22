@@ -709,3 +709,17 @@ body{font-family:"DM Sans",Arial,Helvetica,sans-serif}
 .breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:18px;font-size:.82rem;color:var(--muted)}
 .breadcrumb a{color:var(--muted);text-decoration:none}.breadcrumb a:hover{color:var(--ink)}
 .subject-progress{margin-top:28px}.lesson-explore-head{margin-bottom:18px}
+
+/* v37: both desktop dropdowns are viewport-safe and attached to their trigger */
+@media(min-width:761px){
+  .has-dropdown>.dropdown{width:min(390px,calc(100vw - 24px));max-width:calc(100vw - 24px);}
+  .has-dropdown:first-of-type>.dropdown{left:0;right:auto;}
+  .books-dropdown{left:auto!important;right:0!important;}
+}
+/* Home: all four subject cards share the same visual footprint on mobile. */
+@media(max-width:760px){
+  .home-paths .path-card{min-height:220px;}
+  .home-paths .kids-home-card{display:flex;flex-direction:column;grid-template-columns:none;gap:10px;overflow:hidden;}
+  .home-paths .kids-home-card .kids-card-copy{display:contents;}
+  .home-paths .kids-home-card img{order:4;width:100%;height:92px;object-fit:contain;object-position:center;margin-top:auto;border-radius:12px;background:rgba(255,255,255,.45);}
+}
