@@ -351,3 +351,6 @@ document.querySelectorAll('[data-bond-lab]').forEach(lab => {
   const requested=new URLSearchParams(location.search).get('filter');
   apply(names[requested]?requested:'all');
 })();
+
+// v42 teaching calculator: show formula, substitution and result
+document.querySelectorAll('[data-compound-teach]').forEach(lab=>{const P=lab.querySelector('[data-p]'),R=lab.querySelector('[data-r]'),T=lab.querySelector('[data-t]'),sub=lab.querySelector('[data-substitution]'),ans=lab.querySelector('[data-answer]');function calc(){const p=Number(P.value)||0,r=(Number(R.value)||0)/100,t=Number(T.value)||0,a=p*Math.pow(1+r,t);sub.textContent=`€${p.toLocaleString()} × (1 + ${r.toFixed(3)})^${t}`;ans.textContent=`= €${a.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}`;}[P,R,T].forEach(x=>x.addEventListener('input',calc));calc();});
