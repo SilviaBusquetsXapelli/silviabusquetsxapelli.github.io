@@ -698,3 +698,14 @@ body{font-family:"DM Sans",Arial,Helvetica,sans-serif}
 .kids-home-card:before{display:none!important}.kids-home-card{display:grid!important;grid-template-columns:minmax(0,1fr) 135px;gap:10px;align-items:center;padding-right:12px!important}.kids-home-card img{width:135px;height:145px;object-fit:contain;align-self:end}.kids-card-copy{display:flex;flex-direction:column;align-items:flex-start;min-width:0}.kids-card-copy p{margin-bottom:18px}
 @media(min-width:761px){.nav-parent:hover + .dropdown,.nav-parent:focus-within + .dropdown{opacity:1;visibility:visible;transform:translate(-50%,0)}.has-dropdown:hover .books-dropdown .drop-age{display:grid!important}}
 @media(max-width:760px){.nav-parent{width:100%}.nav-parent>.nav-link{flex:1}.nav-arrow{width:46px;height:44px}.nav-parent:hover + .dropdown,.nav-parent:focus-within + .dropdown{display:none}.has-dropdown.open .dropdown{display:block}.subject-grid{grid-template-columns:1fr}.subject-kids{grid-template-columns:110px 1fr}.subject-kids img{width:110px;height:125px}.kids-home-card{grid-template-columns:1fr 105px}.kids-home-card img{width:105px;height:120px}}
+
+/* v36: dropdowns stay visually attached to their own navigation item */
+@media(min-width:761px){
+  .dropdown{left:0;right:auto;top:calc(100% + 8px);transform:translateY(-4px);}
+  .has-dropdown:hover .dropdown,.has-dropdown:focus-within .dropdown,.has-dropdown.open .dropdown,.nav-parent:hover + .dropdown,.nav-parent:focus-within + .dropdown{transform:translateY(0);}
+  .books-dropdown{left:auto;right:0;transform:translateY(-4px);}
+  .has-dropdown:hover .books-dropdown,.has-dropdown:focus-within .books-dropdown,.has-dropdown.open .books-dropdown{transform:translateY(0);}
+}
+.breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:18px;font-size:.82rem;color:var(--muted)}
+.breadcrumb a{color:var(--muted);text-decoration:none}.breadcrumb a:hover{color:var(--ink)}
+.subject-progress{margin-top:28px}.lesson-explore-head{margin-bottom:18px}
