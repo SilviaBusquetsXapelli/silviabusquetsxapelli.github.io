@@ -760,3 +760,21 @@ body{font-family:"DM Sans",Arial,Helvetica,sans-serif}
   .has-dropdown:focus-within>.dropdown.books-dropdown,
   .has-dropdown.open>.dropdown.books-dropdown{transform:translateY(0)!important;}
 }
+
+/* v39.1 — mobile fit fix for Learn / Explore / Practice strip */
+@media (max-width:760px){
+  .hero-proof.learning-proof{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:0 !important;
+    width:100% !important;
+  }
+  .hero-proof.learning-proof > span{
+    display:block !important;
+    min-width:0 !important;
+    width:100% !important;
+    padding:12px 0 !important;
+    border-bottom:1px solid var(--line) !important;
+  }
+  .hero-proof.learning-proof > span:last-child{border-bottom:0 !important;}
+}
