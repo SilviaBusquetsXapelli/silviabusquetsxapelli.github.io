@@ -723,3 +723,20 @@ body{font-family:"DM Sans",Arial,Helvetica,sans-serif}
   .home-paths .kids-home-card .kids-card-copy{display:contents;}
   .home-paths .kids-home-card img{order:4;width:100%;height:92px;object-fit:contain;object-position:center;margin-top:auto;border-radius:12px;background:rgba(255,255,255,.45);}
 }
+
+/* v38 — dropdown fit: Learn and Books use the same viewport-safe anchoring */
+@media(min-width:761px){
+  .has-dropdown>.dropdown.learn-dropdown,
+  .has-dropdown>.dropdown.books-dropdown{
+    left:auto!important;right:0!important;
+    width:min(390px,calc(100vw - 24px))!important;
+    max-width:calc(100vw - 24px)!important;
+    transform:translateY(-4px)!important;
+  }
+  .has-dropdown:hover>.dropdown.learn-dropdown,
+  .has-dropdown:focus-within>.dropdown.learn-dropdown,
+  .has-dropdown.open>.dropdown.learn-dropdown,
+  .has-dropdown:hover>.dropdown.books-dropdown,
+  .has-dropdown:focus-within>.dropdown.books-dropdown,
+  .has-dropdown.open>.dropdown.books-dropdown{transform:translateY(0)!important;}
+}

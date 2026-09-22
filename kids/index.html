@@ -3,7 +3,7 @@
 </style><script src="https://cdn.amcharts.com/lib/5/index.js"></script><script src="https://cdn.amcharts.com/lib/5/map.js"></script><script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script><script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script></head><body>
 <header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html"><span class="brand-mark">SB</span><span>Silvia Busquets Xapellí</span></a><button aria-expanded="false" aria-label="Open menu" class="menu">☰</button><nav aria-label="Main navigation" class="navlinks">
 <a class="nav-link" href="../index.html">Home</a>
-<div class="nav-item has-dropdown"><button class="nav-link dropdown-trigger active" type="button" aria-expanded="false">Learn <span class="chev">⌄</span></button><div class="dropdown">
+<div class="nav-item has-dropdown"><button class="nav-link dropdown-trigger active" type="button" aria-expanded="false">Learn <span class="chev">⌄</span></button><div class="dropdown learn-dropdown">
 <a href="../kids/"><strong>🌍 Kids: Explore the World</strong><span>Countries, flags, capitals & fun facts</span></a>
 <a href="../european-union.html"><strong>European Union</strong><span>Institutions, law-making and the EU budget</span></a>
 <a href="../economics-monetary-policy.html"><strong>Economics & Monetary Policy</strong><span>Inflation, the ECB and interest rates</span></a>
@@ -33,26 +33,36 @@ const EU=new Set(["AT", "BE", "BG", "CY", "CZ", "DE", "DK", "EE", "ES", "FI", "F
 const byId=Object.fromEntries(countries.map(c=>[c[0],c])); let selected=''; let activeFilter='All';
 const europeIds=new Set(['AL','AD','AT','BY','BE','BA','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','XK','LV','LI','LT','LU','MT','MD','MC','ME','NL','MK','NO','PL','PT','RO','RU','SM','RS','SK','SI','ES','SE','CH','TR','UA','GB','VA']);
 function flagUrl(id){return 'https://flagcdn.com/w640/'+(id==='XK'?'xk':id.toLowerCase())+'.png'}
-function visualStateFor(id){
-  // Filters affect only the flag list. The map stays neutral until a country is selected.
-  const isSelected=id===selected;
-  return {
-    fill:isSelected?0xf1c65a:0xddeaf4,
-    opacity:1,
-    stroke:isSelected?0xb88916:0xffffff,
-    strokeWidth:isSelected?2.4:1.3
-  };
-}
 function paintMap(){
   if(!window.polygonSeries)return;
   polygonSeries.mapPolygons.each(poly=>{
-    // Reset any transient amCharts state before applying our single source of truth.
-    try{poly.states.applyAnimate('default',0);}catch(e){}
-    poly.markDirty();
-    poly.markDirtyValues();
+    const id=poly.dataItem&&poly.dataItem.get('id');
+    const on=id===selected;
+    poly.set('active',on);
+    try{poly.states.applyAnimate(on?'active':'default');}catch(e){}
   });
 }
-function selectCountry(id,doZoom=true){const c=byId[id];if(!c)return;selected=id;document.getElementById('countryName').textContent=c[1];document.getElementById('capital').textContent=c[2];const f=document.getElementById('flag');f.src=flagUrl(id);f.alt='Flag of '+c[1];f.style.visibility='visible';const ul=document.getElementById('facts');ul.innerHTML='';(facts[id]||[]).forEach(t=>{const li=document.createElement('li');li.textContent=t;ul.appendChild(li)});document.getElementById('europeBookTip').hidden=!europeIds.has(id);document.querySelectorAll('.country-card').forEach(x=>x.classList.toggle('active',x.dataset.id===id));paintMap();if(window.polygonSeries){const item=polygonSeries.getDataItemById(id);if(item&&item.get('mapPolygon')&&doZoom&&window.mapChart){const poly=item.get('mapPolygon');let z=['VA','MC','SM','LI','AD','MT','SG','BB','GD','LC','VC','AG','KN','DM','MV','NR','TV','PW','MH','FM','SC','MU','KM','ST','CV','BH','BN'].includes(id)?15:['LU','XK','ME','CY','QA','LB','JM','TT','BS','FJ','WS','TO','VU','BZ','GM','SZ','LS','RW','BI'].includes(id)?11:id==='RU'?3.2:['US','CA','CN','BR','AU','IN'].includes(id)?4:6.2;let center=null;try{center=poly.geoCentroid();}catch(e){}if(center&&Number.isFinite(center.longitude)&&Number.isFinite(center.latitude)){mapChart.zoomToGeoPoint(center,z,true,900);}else{try{mapChart.zoomToDataItem(item);}catch(e){}}setTimeout(paintMap,950);}}}
+function selectCountry(id,doZoom=true){
+ const c=byId[id]; if(!c)return; selected=id;
+ document.getElementById('countryName').textContent=c[1]; document.getElementById('capital').textContent=c[2];
+ const f=document.getElementById('flag'); f.src=flagUrl(id); f.alt='Flag of '+c[1]; f.style.visibility='visible';
+ const ul=document.getElementById('facts'); ul.innerHTML=''; (facts[id]||[]).forEach(t=>{const li=document.createElement('li');li.textContent=t;ul.appendChild(li)});
+ document.getElementById('europeBookTip').hidden=!europeIds.has(id);
+ document.querySelectorAll('.country-card').forEach(x=>x.classList.toggle('active',x.dataset.id===id));
+ paintMap();
+ if(doZoom&&window.polygonSeries&&window.mapChart){
+   const item=polygonSeries.getDataItemById(id);
+   if(item&&item.get('mapPolygon')){
+     const poly=item.get('mapPolygon');
+     const micro=['VA','MC','SM','LI','AD','MT','SG','BB','GD','LC','VC','AG','KN','DM','MV','NR','TV','PW','MH','FM','SC','MU','KM','ST','CV','BH','BN'];
+     const small=['LU','XK','ME','CY','QA','LB','JM','TT','BS','FJ','WS','TO','VU','BZ','GM','SZ','LS','RW','BI'];
+     const z=micro.includes(id)?15:small.includes(id)?11:id==='RU'?3.2:['US','CA','CN','BR','AU','IN'].includes(id)?4:6.2;
+     let center=null; try{center=poly.geoCentroid();}catch(e){}
+     if(center&&Number.isFinite(center.longitude)&&Number.isFinite(center.latitude)) mapChart.zoomToGeoPoint(center,z,true,900);
+     else try{mapChart.zoomToDataItem(item);}catch(e){}
+   }
+ }
+}
 function clearCountrySelection(){selected='';document.querySelectorAll('.country-card').forEach(x=>x.classList.remove('active'));document.getElementById('countryName').textContent='Choose a country';document.getElementById('capital').textContent='—';document.getElementById('flag').style.visibility='hidden';document.getElementById('facts').innerHTML='';document.getElementById('europeBookTip').hidden=true;paintMap();}
 function matchesFilter(c){const id=c[0];if(activeFilter==='All')return true;if(['Europe','Africa','Asia','Americas','Oceania'].includes(activeFilter))return isInRegion(id,activeFilter);if(activeFilter==='EU')return EU.has(id);if(activeFilter==='Euro')return EUROAREA.has(id);if(activeFilter==='Schengen')return SCHENGEN.has(id);return true;}
 function mapMatchesFilter(id){if(activeFilter==='All')return true;if(['Europe','Africa','Asia','Americas','Oceania'].includes(activeFilter))return isInRegion(id,activeFilter);if(activeFilter==='EU')return EU.has(id);if(activeFilter==='Euro')return EUROAREA.has(id);if(activeFilter==='Schengen')return SCHENGEN.has(id);return false;}
@@ -65,14 +75,8 @@ function applyMapFilter(){
 document.querySelectorAll('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{clearCountrySelection();activeFilter=btn.dataset.filter;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b===btn));renderList(document.getElementById('search').value);applyMapFilter();}));
 document.getElementById('search').addEventListener('input',e=>renderList(e.target.value));renderList();document.getElementById('countryName').textContent='Choose a country';document.getElementById('capital').textContent='—';document.getElementById('flag').style.visibility='hidden';
 am5.ready(function(){const root=am5.Root.new('chartdiv');root.setThemes([am5themes_Animated.new(root)]);const chart=root.container.children.push(am5map.MapChart.new(root,{panX:'translateX',panY:'translateY',projection:am5map.geoMercator(),homeGeoPoint:{longitude:15,latitude:54},homeZoomLevel:3.7,minZoomLevel:2,maxZoomLevel:16}));window.mapChart=chart;window.polygonSeries=chart.series.push(am5map.MapPolygonSeries.new(root,{geoJSON:am5geodata_worldLow,exclude:['AQ']}));polygonSeries.mapPolygons.template.setAll({tooltipText:'{name}',interactive:true,fill:am5.color(0xddeaf4),stroke:am5.color(0xffffff),strokeWidth:1.3});
-// The adapters below are the ONLY source of map colour/opacity. This prevents zoom, hover
-// or amCharts transient states from leaving unrelated countries highlighted.
-polygonSeries.mapPolygons.template.adapters.add('fill',(value,target)=>{const id=target.dataItem&&target.dataItem.get('id');return am5.color(visualStateFor(id).fill);});
-polygonSeries.mapPolygons.template.adapters.add('opacity',(value,target)=>{const id=target.dataItem&&target.dataItem.get('id');return visualStateFor(id).opacity;});
-polygonSeries.mapPolygons.template.adapters.add('stroke',(value,target)=>{const id=target.dataItem&&target.dataItem.get('id');return am5.color(visualStateFor(id).stroke);});
-polygonSeries.mapPolygons.template.adapters.add('strokeWidth',(value,target)=>{const id=target.dataItem&&target.dataItem.get('id');return visualStateFor(id).strokeWidth;});
-polygonSeries.mapPolygons.template.states.create('hover',{});
-polygonSeries.mapPolygons.template.events.on('pointerover',ev=>{ev.target.set('stroke',am5.color(0x2e6da4));ev.target.set('strokeWidth',2.2);});
-polygonSeries.mapPolygons.template.events.on('pointerout',ev=>{ev.target.markDirty();ev.target.markDirtyValues();});
-polygonSeries.mapPolygons.template.events.on('click',ev=>{const id=ev.target.dataItem.get('id');if(byId[id]){selectCountry(id)}});chart.set('zoomControl',am5map.ZoomControl.new(root,{}));chart.appear(700,100);setTimeout(()=>{chart.goHome(0)},500);});
+polygonSeries.mapPolygons.template.states.create('hover',{fill:am5.color(0x9bc8e8)});
+polygonSeries.mapPolygons.template.states.create('active',{fill:am5.color(0xf1c65a),stroke:am5.color(0xb88916),strokeWidth:2.4});
+polygonSeries.mapPolygons.template.events.on('click',ev=>{const id=ev.target.dataItem.get('id');if(byId[id])selectCountry(id);});
+chart.set('zoomControl',am5map.ZoomControl.new(root,{}));chart.appear(700,100);setTimeout(()=>{chart.goHome(0)},500);});
 </script></body></html>
