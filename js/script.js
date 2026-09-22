@@ -12,6 +12,7 @@ document.querySelectorAll('.dropdown-trigger').forEach(trigger=>{
   trigger.addEventListener('click', e=>{
     e.stopPropagation();
     const item=trigger.closest('.has-dropdown');
+    document.querySelectorAll('.has-dropdown.open').forEach(other=>{if(other!==item){other.classList.remove('open');other.querySelector('.dropdown-trigger')?.setAttribute('aria-expanded','false')}});
     const open=item.classList.toggle('open');
     trigger.setAttribute('aria-expanded',open?'true':'false');
   });
