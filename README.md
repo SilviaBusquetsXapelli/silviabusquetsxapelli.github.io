@@ -43,3 +43,7 @@ The site is built with HTML CSS and vanilla JavaScript and is hosted with GitHub
 - Maximum 2 photos per country; no generic fallback photo searches.
 - Larger two-column cards on desktop and one-column cards on mobile.
 - Guess the Country reuses only the curated visual clues when available.
+
+
+## v51 Kids curated photos
+Automatic image search was removed. Kids visual facts now use only exact, manually selected Wikimedia Commons files, with zero to two images per country and captions below the photo.
