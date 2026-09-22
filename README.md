@@ -47,3 +47,9 @@ The site is built with HTML CSS and vanilla JavaScript and is hosted with GitHub
 
 ## v51 Kids curated photos
 Automatic image search was removed. Kids visual facts now use only exact, manually selected Wikimedia Commons files, with zero to two images per country and captions below the photo.
+
+
+## v53 Kids update
+- Removed all country/fun-fact photos and external photo dependencies.
+- Kept the child-focused fun facts, games, daily two-round limits and book CTA.
+- Reworked bland facts (including Andorra) toward animals, adventures, food, unusual places, stories and memorable kid-friendly details.
