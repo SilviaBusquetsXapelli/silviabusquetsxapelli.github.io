@@ -29,3 +29,10 @@ The site is built with HTML CSS and vanilla JavaScript and is hosted with GitHub
 - GitHub: https://github.com/SilviaBusquetsXapelli
 
 © 2026 Silvia Busquets Xapellí
+
+## v30 map behaviour
+- Category filters affect only the country/flag cards below the map.
+- Filtering clears any selected country.
+- The map remains neutral regardless of category.
+- Selecting a country (from the map or flags) highlights only that country and zooms to it.
+- Microstates and very small islands use a stronger zoom tier; map max zoom increased to 16.
