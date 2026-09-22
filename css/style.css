@@ -803,3 +803,5 @@ body{font-family:"DM Sans",Arial,Helvetica,sans-serif}
 
 /* v43: consistent lesson components */
 .explain-card{border:1px solid #d9e4ee;border-radius:18px;padding:18px;background:#f8fbfd}.lesson-reflection{width:100%;margin-top:10px;border:1px solid #cbd9e6;border-radius:12px;padding:12px;font:inherit;resize:vertical;background:#fff}.common-mistake-inline{margin-top:18px}
+
+.interview-card{border:1px solid #dfe6ef;border-radius:18px;padding:20px;background:#fff}.interview-question{font-size:1.08rem;font-weight:650;line-height:1.55;margin:0 0 12px}.answer-reveal summary{cursor:pointer;font-weight:700;color:#173b67}.answer-reveal p{margin:12px 0 0;line-height:1.65}
