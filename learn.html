@@ -19,7 +19,25 @@
 <header class="site-header"><div class="container nav">
 <a class="brand" href="index.html"><span class="brand-mark">SB</span><span>Silvia Busquets Xapellí</span></a>
 <button aria-expanded="false" aria-label="Open menu" class="menu">☰</button>
-<nav aria-label="Main navigation" class="navlinks"><a class="nav-link" href="index.html">Home</a><a aria-current="page" class="nav-link active" href="learn.html">Learn</a><a class="nav-link" href="books.html">Books</a><a class="nav-link" href="about.html">About</a></nav>
+<nav aria-label="Main navigation" class="navlinks">
+<a class="nav-link" href="index.html">Home</a>
+<div class="nav-item has-dropdown"><button class="nav-link dropdown-trigger active" type="button" aria-expanded="false">Learn <span class="chev">⌄</span></button><div class="dropdown">
+<a href="kids/"><strong>🌍 Kids: Explore the World</strong><span>Countries, flags, capitals & fun facts</span></a>
+<a href="learn.html#eu-path"><strong>European Union</strong><span>Institutions, law-making and the EU budget</span></a>
+<a href="learn.html#ecb-path"><strong>Economics & Monetary Policy</strong><span>Inflation, the ECB and interest rates</span></a>
+<a href="learn.html#finance-path"><strong>Finance Foundations</strong><span>Bonds, markets, risk and money</span></a>
+<a href="learn.html"><strong>Explore all learning →</strong></a></div></div>
+<div class="nav-item has-dropdown"><button class="nav-link dropdown-trigger" type="button" aria-expanded="false">Books <span class="chev">⌄</span></button><div class="dropdown books-dropdown">
+<div class="drop-heading">BY TYPE</div>
+<a href="books.html?filter=educational"><strong>Learning & Educational</strong><span>Europe, economics, money and learning</span></a>
+<a href="books.html?filter=colouring"><strong>Colouring & Creative</strong><span>Colouring and hands-on creativity</span></a>
+<a href="books.html?filter=puzzles"><strong>Puzzles & Brain Games</strong><span>Crosswords, Sudoku, word searches and logic</span></a>
+<a href="books.html?filter=journals"><strong>Journals & Planning</strong><span>Reading, gratitude, travel and planning</span></a>
+<div class="drop-heading">BY AGE</div>
+<div class="drop-age"><a href="books.html?filter=kids">Kids</a><a href="books.html?filter=teens">Teens</a><a href="books.html?filter=adults">Adults</a><a href="books.html?filter=seniors">Seniors</a></div>
+<a href="books.html?filter=hub"><strong>★ Learning Hub books</strong><span>Books connected to this website</span></a>
+<a href="books.html"><strong>View all books →</strong></a></div></div>
+<a class="nav-link" href="about.html">About</a></nav>
 </div></header>
 <main>
 <section class="container page-hero learn-hero">
@@ -32,6 +50,8 @@
 <small>Progress is stored only in this browser. No account required.</small>
 </div>
 </section>
+<section class="container section kids-featured"><div class="section-label"><div><p class="eyebrow">KIDS</p><h2>Kids’ Learning Zone: explore, play & discover</h2><p>A brighter corner made for curious minds — discover countries, flags, capitals and surprising facts through an interactive world map.</p></div><a class="btn soft" href="kids/">Open Kids →</a></div></section>
+
 <section class="container section compact-section">
 <div class="learn-toolbar">
 <label class="learn-search"><span class="sr-only">Search lessons</span><input id="learn-search" placeholder="Search inflation, Parliament, bonds…" type="search"/></label>
@@ -53,7 +73,7 @@
 </div>
 <p class="empty-search" hidden="" id="learn-no-results">No lesson matches that search yet.</p>
 </section>
-<section class="container section" id="kids-europe"><div class="section-label"><div><p class="eyebrow">KIDS</p><h2>Explore Europe with Silvia &amp; David</h2><p>Find countries on an interactive map, see their flags in colour and discover their capitals.</p></div><a class="btn soft" href="kids/">Open Kids →</a></div></section>
+
 <section class="container section learning-paths">
 <div class="section-label"><div><p class="eyebrow">LEARNING PATHS</p><h2>Learn with a clear path</h2></div></div>
 <article class="path-section" id="eu-path">

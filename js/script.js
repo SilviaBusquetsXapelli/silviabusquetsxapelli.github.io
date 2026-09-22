@@ -328,3 +328,25 @@ document.querySelectorAll('[data-bond-lab]').forEach(lab => {
   input?.addEventListener('input',render);
   render();
 });
+
+// Books: filter by type, age, or Learning Hub relationship.
+(() => {
+  const cards=[...document.querySelectorAll('[data-book-tags]')];
+  const buttons=[...document.querySelectorAll('.book-filter[data-filter]')];
+  if(!cards.length || !buttons.length) return;
+  const title=document.querySelector('#book-results-title');
+  const count=document.querySelector('#book-count');
+  const names={all:'All books',hub:'Learning Hub books',educational:'Learning & educational',colouring:'Colouring & creative',puzzles:'Puzzles & brain games',journals:'Journals & planning',kids:'Books for kids',teens:'Books for teens',adults:'Books for adults',seniors:'Books for seniors'};
+  const apply=(filter, scroll=false)=>{
+    let visible=0;
+    cards.forEach(card=>{const show=filter==='all'||card.dataset.bookTags.split(/\s+/).includes(filter);card.classList.toggle('is-hidden',!show);if(show)visible++;});
+    buttons.forEach(b=>b.classList.toggle('active',b.dataset.filter===filter));
+    if(title) title.textContent=names[filter]||'Books';
+    if(count) count.textContent=`${visible} ${visible===1?'title':'titles'}`;
+    const u=new URL(location.href); if(filter==='all')u.searchParams.delete('filter');else u.searchParams.set('filter',filter); history.replaceState(null,'',u);
+    if(scroll) document.querySelector('.book-results-head')?.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  buttons.forEach(b=>b.addEventListener('click',()=>apply(b.dataset.filter,true)));
+  const requested=new URLSearchParams(location.search).get('filter');
+  apply(names[requested]?requested:'all');
+})();
