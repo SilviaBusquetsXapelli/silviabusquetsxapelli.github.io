@@ -669,3 +669,24 @@ body{font-family:"DM Sans",Arial,Helvetica,sans-serif}
 
 /* v32: keep desktop navigation aligned to the right of the brand */
 @media(min-width:761px){.nav-wrap{display:flex;align-items:center}.navlinks{margin-left:auto}}
+
+/* v33: keep desktop/tablet dropdowns inside the viewport */
+@media (min-width:761px){
+  .books-dropdown{
+    width:min(390px,calc(100vw - 24px));
+    left:auto;
+    right:0;
+    transform:translateY(-5px);
+    box-sizing:border-box;
+  }
+  .has-dropdown:hover .books-dropdown,
+  .has-dropdown:focus-within .books-dropdown,
+  .has-dropdown.open .books-dropdown{transform:translateY(0)}
+  .books-dropdown .drop-age{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .books-dropdown .drop-age a{min-width:0;white-space:normal}
+}
+@media (min-width:761px) and (max-width:900px){
+  .books-dropdown{width:min(350px,calc(100vw - 20px));padding:7px}
+  .books-dropdown a{padding:9px 10px}
+  .books-dropdown .drop-age{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
