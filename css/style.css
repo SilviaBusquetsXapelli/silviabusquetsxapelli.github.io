@@ -740,3 +740,23 @@ body{font-family:"DM Sans",Arial,Helvetica,sans-serif}
   .has-dropdown:focus-within>.dropdown.books-dropdown,
   .has-dropdown.open>.dropdown.books-dropdown{transform:translateY(0)!important;}
 }
+
+
+/* v39 — final desktop dropdown anchoring: same fit, appropriate edge for each trigger */
+@media(min-width:761px){
+  .has-dropdown>.dropdown.learn-dropdown,
+  .has-dropdown>.dropdown.books-dropdown{
+    width:min(390px,calc(100vw - 24px))!important;
+    max-width:calc(100vw - 24px)!important;
+    box-sizing:border-box!important;
+    transform:translateY(-4px)!important;
+  }
+  .has-dropdown>.dropdown.learn-dropdown{left:0!important;right:auto!important;}
+  .has-dropdown>.dropdown.books-dropdown{left:auto!important;right:0!important;}
+  .has-dropdown:hover>.dropdown.learn-dropdown,
+  .has-dropdown:focus-within>.dropdown.learn-dropdown,
+  .has-dropdown.open>.dropdown.learn-dropdown,
+  .has-dropdown:hover>.dropdown.books-dropdown,
+  .has-dropdown:focus-within>.dropdown.books-dropdown,
+  .has-dropdown.open>.dropdown.books-dropdown{transform:translateY(0)!important;}
+}
