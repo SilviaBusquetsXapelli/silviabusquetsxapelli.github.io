@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Interactive calculators for inflation, compounding and loan costs."><title>Practice | Silvia Busquets Xapellí</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"><link rel="icon" href="favicon.svg" type="image/svg+xml"></head><body>
+<header class="site-header"><div class="container nav">
+<a class="brand" href="index.html"><span class="brand-mark">SB</span><span>Silvia Busquets Xapellí</span></a>
+<button aria-expanded="false" aria-label="Open menu" class="menu">☰</button>
+<nav aria-label="Main navigation" class="navlinks">
+<a class="nav-link" href="index.html">Home</a>
+<div class="nav-item has-dropdown"><div class="nav-parent"><a class="nav-link active" href="learn.html">Learn</a><button aria-expanded="false" aria-label="Open Learn menu" class="dropdown-trigger nav-arrow" type="button"><span class="chev">⌄</span></button></div><div class="dropdown">
+<a href="learn.html"><strong>Learn</strong><span>Clear explanations, one concept at a time</span></a>
+<a href="explore.html"><strong>Explore</strong><span>Interactive Europe & country discovery</span></a>
+<a href="practice.html"><strong>Practice</strong><span>Calculators and mini challenges</span></a>
+<a href="kids/"><strong>🌍 Kids: Explore the World</strong><span>Countries, flags, capitals & fun facts</span></a>
+</div></div>
+<div class="nav-item has-dropdown"><div class="nav-parent"><a class="nav-link" href="books.html">Books</a><button aria-expanded="false" aria-label="Open Books menu" class="dropdown-trigger nav-arrow" type="button"><span class="chev">⌄</span></button></div><div class="dropdown books-dropdown">
+<div class="drop-heading">BY TYPE</div>
+<a href="books.html?filter=educational"><strong>Learning & Educational</strong><span>Europe, economics, money and learning</span></a>
+<a href="books.html?filter=colouring"><strong>Colouring & Creative</strong><span>Colouring and hands-on creativity</span></a>
+<a href="books.html?filter=puzzles"><strong>Puzzles & Brain Games</strong><span>Crosswords, Sudoku, word searches and logic</span></a>
+<a href="books.html?filter=journals"><strong>Journals & Planning</strong><span>Reading, gratitude, travel and planning</span></a>
+<div class="drop-heading">BY AGE</div><div class="drop-age"><a href="books.html?filter=kids">Kids</a><a href="books.html?filter=teens">Teens</a><a href="books.html?filter=adults">Adults</a><a href="books.html?filter=seniors">Seniors</a></div>
+<a href="books.html?filter=hub"><strong>★ Learning Hub books</strong><span>Books connected to this website</span></a>
+<a href="books.html"><strong>View all books →</strong></a></div></div>
+<a class="nav-link" href="about.html">About</a></nav></div></header><main><section class="container page-hero"><p class="eyebrow">PRACTICE</p><h1>Small tools. Real intuition.</h1>
+<p class="lead display-copy">Use the web for what paper cannot do as easily: change the numbers, test a scenario and see the result instantly. These tools complement the books rather than reproduce them.</p></section>
+<section class="container section compact-section"><div class="tool-grid">
+<article class="tool-card" data-calc="inflation"><span>01 · PURCHASING POWER</span><h2>Inflation Calculator</h2><p>See what the same future price level means for your money.</p>
+<label>Amount (€)<input data-v="amount" type="number" value="1000" min="0" step="50"></label><label>Inflation per year (%)<input data-v="rate" type="number" value="2.5" step=".1"></label><label>Years<input data-v="years" type="number" value="10" min="0"></label>
+<div class="tool-result">Equivalent future price: <strong data-out>€0</strong></div></article>
+<article class="tool-card" data-calc="compound"><span>02 · COMPOUNDING</span><h2>Compound Interest Calculator</h2><p>Change the starting amount, monthly contribution, return and time.</p>
+<label>Starting amount (€)<input data-v="principal" type="number" value="1000" min="0"></label><label>Monthly contribution (€)<input data-v="monthly" type="number" value="100" min="0"></label><label>Annual rate (%)<input data-v="rate" type="number" value="5" step=".1"></label><label>Years<input data-v="years" type="number" value="20" min="0"></label>
+<div class="tool-result">Illustrative future value: <strong data-out>€0</strong></div></article>
+<article class="tool-card" data-calc="loan"><span>03 · BORROWING</span><h2>Loan Cost Calculator</h2><p>Estimate a fixed monthly payment and total repayment.</p>
+<label>Loan (€)<input data-v="principal" type="number" value="10000" min="0"></label><label>Annual rate (%)<input data-v="rate" type="number" value="5" step=".1"></label><label>Years<input data-v="years" type="number" value="5" min="1"></label>
+<div class="tool-result"><strong data-out>€0/month</strong><small data-total></small></div></article>
+</div><p class="tool-note">Illustrative educational calculations only. Actual products can use different compounding, fees, taxes and contractual rules.</p></section></main><footer class="footer-premium"><div class="container"><div class="footer-grid">
+<div class="footer-brand"><h3>Silvia Busquets Xapellí</h3><p>Economics finance and European affairs through clear learning and explanation</p></div>
+<div class="footer-col"><strong>Explore</strong><a href="learn.html">Learn</a><a href="explore.html">Explore</a><a href="practice.html">Practice</a><a href="books.html">Books</a></div>
+<div class="footer-col"><strong>Connect</strong><a href="https://www.linkedin.com/in/silvia-busquets-xapell%C3%AD" rel="noopener noreferrer" target="_blank">LinkedIn ↗</a><a href="https://github.com/SilviaBusquetsXapelli" rel="noopener noreferrer" target="_blank">GitHub ↗</a></div>
+</div><div class="footer-bottom"><span>© 2026 Silvia Busquets Xapellí</span><span>Economics Finance and European Affairs</span></div></div></footer><script src="js/script.js"></script><script>
+function euro(n){return new Intl.NumberFormat('en',{style:'currency',currency:'EUR',maximumFractionDigits:2}).format(n)}
+document.querySelectorAll('[data-calc]').forEach(c=>{
+ const get=k=>Number(c.querySelector(`[data-v="${k}"]`)?.value||0);
+ const render=()=>{
+  if(c.dataset.calc==='inflation'){c.querySelector('[data-out]').textContent=euro(get('amount')*Math.pow(1+get('rate')/100,get('years')))}
+  if(c.dataset.calc==='compound'){let r=get('rate')/100/12,n=get('years')*12,p=get('principal'),m=get('monthly');let v=r? p*Math.pow(1+r,n)+m*((Math.pow(1+r,n)-1)/r):p+m*n;c.querySelector('[data-out]').textContent=euro(v)}
+  if(c.dataset.calc==='loan'){let P=get('principal'),r=get('rate')/100/12,n=get('years')*12;let pay=r?P*r/(1-Math.pow(1+r,-n)):P/n;c.querySelector('[data-out]').textContent=euro(pay)+'/month';c.querySelector('[data-total]').textContent='Estimated total repayment: '+euro(pay*n)}
+ }; c.querySelectorAll('input').forEach(i=>i.addEventListener('input',render));render();
+});
+</script></body></html>
