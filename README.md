@@ -36,3 +36,10 @@ The site is built with HTML CSS and vanilla JavaScript and is hosted with GitHub
 - The map remains neutral regardless of category.
 - Selecting a country (from the map or flags) highlights only that country and zooms to it.
 - Microstates and very small islands use a stronger zoom tier; map max zoom increased to 16.
+
+
+## v50 Kids visual facts
+- Curated visual facts only: photos are shown only when they directly illustrate a fact.
+- Maximum 2 photos per country; no generic fallback photo searches.
+- Larger two-column cards on desktop and one-column cards on mobile.
+- Guess the Country reuses only the curated visual clues when available.
